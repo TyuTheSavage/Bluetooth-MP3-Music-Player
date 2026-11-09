@@ -9,7 +9,7 @@ The workflow is as follows: a phone or Bluetooth capable device connects to the 
 - Bluetooth Module  : ESP32
 - Screen            : LCD 0.5"
 - Encoder           : Rotary Digital
-- Amplifier         : -
+- Amplifier         : MAX98357A
 - Speakers          : 3W 8ohm
 
 ## License
