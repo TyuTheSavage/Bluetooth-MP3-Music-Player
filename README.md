@@ -11,8 +11,7 @@ The workflow is as follows: a phone or Bluetooth capable device connects to the 
 - Screen            : LCD 0.5"
 - Encoder           : Rotary Digital
 - Amplifier         : MAX98357A
-- Speakers          : 3W 8ohm via I2S and MAX98357A
-                    : any active speaker capable of processing RCA input
+- Speakers          : 3W 8ohm via I2S and MAX98357A & any active speaker capable of processing RCA input
 
 ## License
 
