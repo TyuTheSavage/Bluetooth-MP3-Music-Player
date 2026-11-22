@@ -17,12 +17,20 @@ static const uint16_t DEBOUNCE_MS = 35;
 
 SoftwareSerial esp(UART_RX, UART_TX);
 Adafruit_SSD1306 display(OLED_W, OLED_H, &Wire, -1);
-static bool oledReady = false, dirty = true, connected = false;
-static bool playing = false, paused = false;
+
+static bool oledReady = false;
+static bool dirty = true;
+static bool connected = false;
+
+static bool playing = false;
+static bool paused = false;
+
 static uint8_t volumeLevel = 50, lastClk = HIGH;
 static unsigned long lastButtonChange = 0, lastEdgeUs = 0;
 static uint8_t buttonReading = HIGH, buttonStable = HIGH;
-static char title[TEXT_LEN] = "-", artist[TEXT_LEN] = "-";
+
+static char title[TEXT_LEN] = "-"; 
+static char artist[TEXT_LEN] = "-";
 static char line[96];
 static uint8_t lineLen = 0;
 static bool overflow = false;
