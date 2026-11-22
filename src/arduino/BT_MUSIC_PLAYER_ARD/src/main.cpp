@@ -35,13 +35,24 @@ static char line[96];
 static uint8_t lineLen = 0;
 static bool overflow = false;
 
-static void sendLine(const char *s) { esp.println(s); }
-static void sendVolume() { esp.print(F("VOL:")); esp.println(volumeLevel); }
-static void sendPlayback() { sendLine(playing ? "PLAY" : "PAUSE"); }
+static void sendLine(const char *s) {
+  esp.println(s);
+}
+
+static void sendVolume() { 
+  esp.print(F("VOL:"));
+  esp.println(volumeLevel);
+}
+
+static void sendPlayback() {
+  sendLine(playing ? "PLAY" : "PAUSE");
+}
 
 static void setText(char *dst, const char *src) {
   if (!src || !*src) src = "-";
-  strncpy(dst, src, TEXT_LEN - 1); dst[TEXT_LEN - 1] = '\0'; dirty = true;
+  strncpy(dst, src, TEXT_LEN - 1);
+  dst[TEXT_LEN - 1] = '\0';
+  dirty = true;
 }
 
 static void receiveLine(char *s) {
